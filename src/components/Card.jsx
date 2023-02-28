@@ -1,23 +1,32 @@
-import katie from '../assets/katie-zaferes.png';
 import star from '../assets/icon-star.png';
 
-function Card() {
+function Card(props) {
+  let badgeText;
+
+  if (props.openSpots === 0) {
+    badgeText = 'Sold Out';
+  } else if (props.location === 'Online') {
+    badgeText = 'Online';
+  }
+
   return (
     <div className="card">
       <div className="card__img-wrapper">
-        <div className="card__buy-status">Sold Out</div>
-        <img src={katie} alt="" className="card__img" />
+        {badgeText && <div className="card__buy-status">{badgeText}</div>}
+        <img src={`../assets/${props.img}`} alt="" className="card__img" />
       </div>
+
       <div className="card__details">
         <div className="card__rating">
           <img src={star} alt="star" className="card__rating-icon" />
-          <span className="card__rating-stars">5.0</span>
-          <span className="card__rating-amount">(6)</span>
-          <span className="card__rating-location">USA</span>
+          <span className="card__rating-stars">{props.rating}</span>
+          <span className="card__rating-amount">({props.reviewCount})</span>
+          <span className="card__rating-location">{props.location}</span>
         </div>
-        <div className="card__description">Life lessons with Katie Zaferes</div>
+
+        <div className="card__description">{props.title}</div>
         <div className="card__pricing">
-          <span className="card__pricing-amount">From $135</span>
+          <span className="card__pricing-amount">From ${props.price}</span>
           <span className="card__pricing-pax">person</span>
         </div>
       </div>
