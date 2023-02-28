@@ -1,3 +1,5 @@
+import heroGrid from '../assets/airbnb-grid.png';
+
 function Hero() {
   return (
     <section className="hero">
@@ -6,11 +8,13 @@ function Hero() {
       </div>
       <div className="hero__text">
         <h1 className="hero__title">Online Experiences</h1>
-        <span className="hero__description">
+        <p className="hero__description">
           Join unique interactive activities led by one-of-a-kind hosts—all
           without leaving home.
-        </span>
+        </p>
       </div>
     </section>
   );
 }
+
+export default Hero;

@@ -1,8 +1,11 @@
 import './sass/main.scss';
 
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Navbar />
       <Hero />
     </div>
