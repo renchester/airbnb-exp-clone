@@ -33,7 +33,7 @@
   }
 
   &__text {
-    margin-left: 36px;
+    margin: 36px 0 0 36px;
   }
 
   &__title {
@@ -46,5 +46,89 @@
     margin-top: 16px;
     width: 320px;
     line-height: 17.6px;
+  }
+}
+
+.card {
+  width: 176px;
+
+  &__container {
+    margin: 36px 0 0 36px;
+  }
+
+  &__img-wrapper {
+    position: relative;
+    height: 235px;
+    // width: 176px;
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__buy-status {
+    position: absolute;
+    margin: 6px;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: 1.5px solid black;
+
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 9px;
+    font-size: 12px;
+  }
+
+  &__rating {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    &-icon {
+      width: 14px;
+    }
+
+    &-amount,
+    &-location {
+      color: #918e9b;
+    }
+
+    &-amount {
+      margin-right: 7px;
+    }
+
+    &-amount::after {
+      content: '●';
+      font-size: 7px;
+      position: absolute;
+      margin-left: 2px;
+      top: 23%;
+    }
+  }
+
+  &__description {
+    width: 100%;
+  }
+
+  &__pricing {
+    display: flex;
+
+    &-amount {
+      font-weight: 700;
+    }
+
+    &-amount::after {
+      content: '/';
+      margin: 0 3px;
+      font-weight: 300;
+    }
   }
 }
